@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../page/Home";
-import React from "react";
 import Login from "../page/Login";
 import DashBoard from "../page/DashBoard";
 
