@@ -1,6 +1,6 @@
 import { Box, styled } from "@mui/material";
 import SessionSort from "../molecule/SessionSort";
-import SessionSearch from "../molecule/SessinSearch";
+import SessionSearch from "../molecule/SessionSearch";
 import SessionFilter from "../molecule/SessionFilter";
 
 export default function SessionOption() {
