@@ -7,6 +7,7 @@ import {
   OutlinedInput,
   Select,
   SelectChangeEvent,
+  Typography,
 } from "@mui/material";
 import { useState } from "react";
 
@@ -40,7 +41,7 @@ export default function SessionFilter() {
         )}
       >
         {sortBenchmark.map((e) => (
-            <MenuItem key={e} value={e}><Chip label={e}/></MenuItem>
+            <MenuItem key={e} value={e}><Typography>{e}</Typography></MenuItem>
         ))}
       </Select>
     </FormControl>
