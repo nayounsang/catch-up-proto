@@ -1,4 +1,5 @@
 import {
+  Box,
   Paper,
   Table,
   TableBody,
@@ -6,20 +7,53 @@ import {
   TableContainer,
   TableHead,
 } from "@mui/material";
+import SessionElement from "../molecule/SessionElement";
+
+const sessionData: {
+  name: string;
+  role: string;
+  date: string;
+  document: string;
+}[] = [
+  {
+    name: "나윤상에 대한 이해 1주차",
+    role: "강의자",
+    date: "2024-06-21",
+    document: "lecture-01.pdf",
+  },
+  {
+    name: "우주왕복 로켓 실험 3주차",
+    role: "수강생",
+    date: "2024-06-21",
+    document: "universe03.pdf",
+  },
+  {
+    name: "운영체제-데드락",
+    role: "강의자",
+    date: "2024-06-21",
+    document: "os-deadlock.pdf",
+  },
+];
 
 export default function SessionTable() {
   return (
-    <TableContainer component={Paper}>
-      <Table>
-        <TableHead>
-          <TableCell>세션 제목</TableCell>
-          <TableCell align="right">내 역할</TableCell>
-          <TableCell align="right">일시</TableCell>
-          <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-          <TableCell align="right">Protein&nbsp;(g)</TableCell>
-        </TableHead>
-        <TableBody></TableBody>
-      </Table>
-    </TableContainer>
+    <Box sx={{ padding: "1rem" }}>
+      <TableContainer component={Paper}>
+        <Table>
+          <TableHead>
+            <TableCell>세션 제목</TableCell>
+            <TableCell align="right">내 역할</TableCell>
+            <TableCell align="right">일시</TableCell>
+            <TableCell align="right">문서</TableCell>
+            <TableCell align="center">옵션</TableCell>
+          </TableHead>
+          <TableBody>
+            {sessionData.map((e, i) => (
+              <SessionElement {...e} key={i} />
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Box>
   );
 }
