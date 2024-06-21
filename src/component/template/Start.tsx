@@ -1,9 +1,10 @@
 import { Box, Button, Link, Typography, styled } from "@mui/material";
+import BrandLogo from "../atom/BrandLogo";
 
 export default function Start() {
   return (
     <Container>
-      <BrandImage src="/vite.svg" width={200} height={200} />
+      <BrandLogo width={200} height={200}/>
       <Box>
         <Text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -25,8 +26,6 @@ const Container = styled(Box)(() => ({
   alignItems: "center",
   width: "40%",
 }));
-
-const BrandImage = styled("img")(() => ({}));
 
 const Text = styled(Typography)(() => ({}));
 
