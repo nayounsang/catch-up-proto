@@ -1,4 +1,4 @@
-import { Button, TableCell, TableRow } from "@mui/material";
+import { Button, Link, TableCell, TableRow } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
 
 interface PropType {
@@ -6,6 +6,7 @@ interface PropType {
   role: string;
   date: string;
   document: string;
+  auth: string;
 }
 
 export default function SessionElement({
@@ -13,14 +14,19 @@ export default function SessionElement({
   role,
   date,
   document,
+  auth
 }: PropType) {
   return (
     <TableRow>
       <TableCell component="th" scope="row">
-        {name}
+        <Link href="session">   
+             {name}
+        </Link>
+
       </TableCell>
       <TableCell align="right">{role}</TableCell>
       <TableCell align="right">{date}</TableCell>
+      <TableCell align="right">{auth}</TableCell>
       <TableCell align="right">{document}</TableCell>
       <TableCell align="center">
         <Button>

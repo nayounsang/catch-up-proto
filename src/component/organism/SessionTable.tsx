@@ -12,6 +12,7 @@ import SessionElement from "../molecule/SessionElement";
 const sessionData: {
   name: string;
   role: string;
+  auth: string;
   date: string;
   document: string;
 }[] = [
@@ -20,18 +21,21 @@ const sessionData: {
     role: "강의자",
     date: "2024-06-21",
     document: "lecture-01.pdf",
+    auth:"모든 사람",
   },
   {
     name: "우주왕복 로켓 실험 3주차",
     role: "수강생",
     date: "2024-06-21",
     document: "universe03.pdf",
+    auth:"링크 소유자",
   },
   {
     name: "운영체제-데드락",
     role: "강의자",
     date: "2024-06-21",
     document: "os-deadlock.pdf",
+    auth:"비공개",
   },
 ];
 
@@ -44,6 +48,7 @@ export default function SessionTable() {
             <TableCell>세션 제목</TableCell>
             <TableCell align="right">내 역할</TableCell>
             <TableCell align="right">일시</TableCell>
+            <TableCell align="right">권한</TableCell>
             <TableCell align="right">문서</TableCell>
             <TableCell align="center">옵션</TableCell>
           </TableHead>

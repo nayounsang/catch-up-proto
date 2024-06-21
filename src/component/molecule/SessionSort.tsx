@@ -1,4 +1,4 @@
-import { FormControl, InputLabel, NativeSelect } from "@mui/material";
+import { FormControl, InputLabel, NativeSelect, Typography } from "@mui/material";
 
 export default function SessionSort() {
   return (
@@ -13,8 +13,8 @@ export default function SessionSort() {
           id: "sort",
         }}
       >
-        <option value={"latest"}>최신순</option>
-        <option value={"others"}>다른것</option>
+        <option value={"latest"}><Typography>최신순</Typography></option>
+        <option value={"others"}><Typography>다른것</Typography></option>
       </NativeSelect>
     </FormControl>
   );
