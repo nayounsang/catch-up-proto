@@ -17,8 +17,8 @@ export default function Login() {
         <Typography variant="h2" fontWeight="bold">
           캐치업
         </Typography>
-        <Input placeholder="아이디" fullWidth />
-        <Input placeholder="비밀번호" fullWidth />
+        <Input placeholder="아이디" fullWidth required/>
+        <Input placeholder="비밀번호" fullWidth type="password" required/>
         <Box
           display="flex"
           justifyContent="space-between"
@@ -34,7 +34,7 @@ export default function Login() {
           </Link>
         </Box>
         <Link href="/dashboard" sx={{ width: "100%" }}>
-          <Button variant="contained" fullWidth>
+          <Button variant="contained" fullWidth type="submit">
             <Typography>로그인</Typography>
           </Button>
         </Link>

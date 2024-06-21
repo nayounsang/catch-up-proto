@@ -1,6 +1,7 @@
 import { Box, Button, FormControl, Typography, styled } from "@mui/material";
 import SessionAuthOption from "../component/molecule/SessionAuthOption";
 import SessionTitleInput from "../component/atom/SessionTitleInput";
+import SessionFileSelect from "../component/template/SessionFileSelect";
 
 export default function Session() {
   return (
@@ -9,17 +10,13 @@ export default function Session() {
         <FormControl sx={{ gap: "1rem" }}>
           <SessionTitleInput />
           <SessionAuthOption />
-          <Box display="flex"></Box>
+          <SessionFileSelect/>
         </FormControl>
-        <Box display="flex" gap="3rem">
-          <Button variant="contained" type="submit">
-            <Typography>세션 시작</Typography>
-          </Button>
-          <Button variant="contained" type="submit" color="error">
-            <Typography>세션 삭제</Typography>
-          </Button>
-        </Box>
-      </InnerContainer>{" "}
+
+        <Button variant="contained" type="submit" size="large">
+          <Typography>세션 시작</Typography>
+        </Button>
+      </InnerContainer>
     </Container>
   );
 }
@@ -38,5 +35,6 @@ const InnerContainer = styled(Box)(() => ({
   gap: "1rem",
   boxSizing: "border-box",
   padding: "4rem",
-  maxWidth: "800px",
+  width: "100%",
+  maxWidth: "1024px"
 }));
