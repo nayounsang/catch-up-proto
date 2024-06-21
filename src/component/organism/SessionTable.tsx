@@ -34,7 +34,7 @@ const sessionData: {
     name: "운영체제-데드락",
     role: "강의자",
     date: "2024-06-21",
-    document: "os-deadlock.pdf",
+    document: "비어있습니다.",
     auth:"비공개",
   },
 ];
