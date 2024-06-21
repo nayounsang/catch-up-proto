@@ -1,11 +1,13 @@
 import { styled } from "@mui/material";
 import SideBar from "../component/template/SideBar";
+import SessionView from "../component/template/SessionView";
 
 export default function DashBoard() {
   return (
     <>
       <Container>
         <SideBar/>
+        <SessionView/>
       </Container>
     </>
   );
