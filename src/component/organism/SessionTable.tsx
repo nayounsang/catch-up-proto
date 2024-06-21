@@ -34,7 +34,7 @@ const sessionData: {
     name: "운영체제-데드락",
     role: "강의자",
     date: "2024-06-21",
-    document: "os-deadlock.pdf",
+    document: "비어있습니다.",
     auth:"비공개",
   },
 ];
@@ -45,12 +45,13 @@ export default function SessionTable() {
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
-            <TableCell>세션 제목</TableCell>
+            <TableCell>세션 제목 및 상세보기</TableCell>
             <TableCell align="right">내 역할</TableCell>
             <TableCell align="right">일시</TableCell>
             <TableCell align="right">권한</TableCell>
             <TableCell align="right">문서</TableCell>
-            <TableCell align="center">옵션</TableCell>
+        
+            <TableCell align="center">삭제</TableCell>
           </TableHead>
           <TableBody>
             {sessionData.map((e, i) => (
