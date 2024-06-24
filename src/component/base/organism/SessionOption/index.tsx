@@ -1,7 +1,7 @@
 import { Box, styled } from "@mui/material";
-import SessionSort from "../../molecule/SessionSort";
-import SessionSearch from "../../molecule/SessionSearch";
-import SessionFilter from "../../molecule/SessionFilter";
+import SessionSort from "./SessionSort";
+import SessionSearch from "./SessionSearch";
+import SessionFilter from "./SessionFilter";
 
 export default function SessionOption() {
   return (

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import SessionFilter from "../../../../component/base/molecule/SessionFilter";
-import SessionSearch from "../../../../component/base/molecule/SessionSearch";
-import SessionSort from "../../../../component/base/molecule/SessionSort";
+import SessionFilter from "../../../../component/base/organism/SessionOption/SessionFilter";
+import SessionSearch from "../../../../component/base/organism/SessionOption/SessionSearch";
+import SessionSort from "../../../../component/base/organism/SessionOption/SessionSort";
 import { Box } from "@mui/material";
 
 export default function FileSelectOption() {
