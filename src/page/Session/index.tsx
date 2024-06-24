@@ -1,7 +1,7 @@
 import { Box, Button, FormControl, Typography, styled } from "@mui/material";
-import SessionAuthOption from "../component/molecule/SessionAuthOption";
-import SessionTitleInput from "../component/atom/SessionTitleInput";
-import SessionFileSelect from "../component/template/SessionFileSelect";
+import SessionDetailOption from "./component/SessionDetailOption";
+import SessionTitleInput from "./component/SessionTitleInput";
+import SessionFileSelect from "./component/SessionFileSelect";
 
 export default function Session() {
   return (
@@ -9,10 +9,9 @@ export default function Session() {
       <InnerContainer>
         <FormControl sx={{ gap: "1rem" }}>
           <SessionTitleInput />
-          <SessionAuthOption />
-          <SessionFileSelect/>
+          <SessionDetailOption />
+          <SessionFileSelect />
         </FormControl>
-
         <Button variant="contained" type="submit" size="large">
           <Typography>세션 시작</Typography>
         </Button>
@@ -36,5 +35,5 @@ const InnerContainer = styled(Box)(() => ({
   boxSizing: "border-box",
   padding: "4rem",
   width: "100%",
-  maxWidth: "1024px"
+  maxWidth: "1024px",
 }));

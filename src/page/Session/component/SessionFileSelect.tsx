@@ -1,7 +1,7 @@
 import { Box, Button, FormLabel } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import FileSelectOption from "../organism/FileSelectOption";
-import FileTable from "../organism/FileTable";
+import FileSelectOption from "../../../component/organism/FileSelectOption";
+import FileTable from "../../../component/organism/FileTable";
 
 export default function SessionFileSelect() {
   return (

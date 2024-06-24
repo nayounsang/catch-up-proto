@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import { ReactNode } from "react";
 import SettingsIcon from "@mui/icons-material/Settings";
-import SideBarElement from "../molecule/SideBarElement";
+import SideBarElement from "./SideBarElement";
 import BrandLogo from "../atom/BrandLogo";
 
 const infoData: {
