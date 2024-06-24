@@ -28,7 +28,7 @@ export default function FileElement({
   return (
     <TableRow>
       <TableCell component="th" scope="row">
-        <Link href="session">{name}</Link>
+        <Link href="/">{name}</Link>
       </TableCell>
       <TableCell align="right">{date}</TableCell>
       <TableCell align="right">{capacity}</TableCell>

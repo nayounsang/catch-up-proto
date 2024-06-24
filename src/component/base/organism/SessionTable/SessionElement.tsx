@@ -20,7 +20,7 @@ export default function SessionElement({
   return (
     <TableRow>
       <TableCell component="th" scope="row">
-        <Link href="session">{name}</Link>
+        <Link href="/session">{name}</Link>
       </TableCell>
       <TableCell align="right">{role}</TableCell>
       <TableCell align="right">{date}</TableCell>
