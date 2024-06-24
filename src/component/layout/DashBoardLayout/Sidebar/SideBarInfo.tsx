@@ -4,6 +4,7 @@ import {
   ListItemAvatar,
   ListItemButton,
   ListItemText,
+  ListSubheader,
 } from "@mui/material";
 import { ReactNode } from "react";
 import SettingsIcon from "@mui/icons-material/Settings";
@@ -21,7 +22,7 @@ const infoData: {
 
 export default function SideBarInfo() {
   return (
-    <List>
+    <List subheader={<ListSubheader>유저</ListSubheader>}>
       {infoData.map((e) => (
         <SideBarElement {...e} />
       ))}

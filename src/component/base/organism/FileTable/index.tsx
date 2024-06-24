@@ -18,13 +18,13 @@ const sessionData: {
   {
     name: "asdf.pdf",
     date: "2023-03-01",
-    capacity: "1.6Mb",
+    capacity: "1.6MB",
     sessions: ["foo", "bar", "baz"],
   },
   {
     name: "qwerty.pdf",
     date: "2023-03-01",
-    capacity: "2.3Mb",
+    capacity: "2.3MB",
     sessions: ["foo", "bar", "baz"],
   },
   { name: "foo.pdf", date: "2023-03-01", capacity: "1.6Mb", sessions: ["foo"] },
@@ -32,13 +32,13 @@ const sessionData: {
   {
     name: "good.pdf",
     date: "2023-03-01",
-    capacity: "1.6Mb",
+    capacity: "1.6MB",
     sessions: ["foo", "bar", "baz"],
   },
   {
     name: "alicebob.pdf",
     date: "2023-03-01",
-    capacity: "1.6Mb",
+    capacity: "1.6MB",
     sessions: ["foo", "bar", "baz"],
   },
 ];
@@ -50,7 +50,7 @@ export default function FileTable() {
         <Table>
           <TableHead>
             <TableCell>문서 제목</TableCell>
-            <TableCell align="right">일시</TableCell>
+            <TableCell align="right">생성일</TableCell>
             <TableCell align="right">용량</TableCell>
             <TableCell align="right">세션</TableCell>
             <TableCell align="center">삭제</TableCell>

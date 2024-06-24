@@ -17,5 +17,5 @@ const Container = styled(Box)(() => ({
   height: "100%",
   borderRight: "1px solid #ccc",
   width: "200px",
-  padding: "1rem 0"
+  padding: "0.75rem 0.25rem"
 }));
