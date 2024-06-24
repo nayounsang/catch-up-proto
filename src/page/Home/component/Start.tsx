@@ -1,5 +1,5 @@
 import { Box, Button, Link, Typography, styled } from "@mui/material";
-import BrandLogo from "../../../component/atom/BrandLogo";
+import BrandLogo from "../../../component/base/atom/BrandLogo";
 
 export default function Start() {
   return (

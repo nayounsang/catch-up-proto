@@ -1,5 +1,5 @@
 import { Box, styled } from "@mui/material";
-import SideBar from "../organism/SideBar";
+import SideBar from "./Sidebar";
 import { Outlet } from "react-router-dom";
 
 export default function DashBoardLayout() {

@@ -1,5 +1,5 @@
 import { Box, Paper, Table, TableBody, TableCell, TableContainer, TableHead } from "@mui/material";
-import FileElement from "../molecule/FileElement";
+import FileUploadElement from "./FileUploadElement";
 
 const fileData:{name:string;date:string;}[] = [
     {name:"나의개인정보.pdf",date:"2022-03-10"},
@@ -9,7 +9,7 @@ const fileData:{name:string;date:string;}[] = [
     {name:"네이버계정정보.pdf",date:"2019-03-10"},
 ]
 
-export default function FileTable() {
+export default function FileUploadTable() {
   return (
     <Box sx={{maxHeight:"250px",overflowY:"scroll"}}>
       <TableContainer component={Paper}>
@@ -22,7 +22,7 @@ export default function FileTable() {
           </TableHead>
           <TableBody >
             {fileData.map((e, i) => (
-              <FileElement {...e} key={i} />
+              <FileUploadElement {...e} key={i} />
             ))}
           </TableBody>
         </Table>

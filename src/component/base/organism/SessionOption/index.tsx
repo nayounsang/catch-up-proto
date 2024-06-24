@@ -1,22 +1,21 @@
-import styled from "@emotion/styled";
-import SessionFilter from "../molecule/SessionFilter";
-import SessionSearch from "../molecule/SessionSearch";
-import SessionSort from "../molecule/SessionSort";
-import { Box } from "@mui/material";
+import { Box, styled } from "@mui/material";
+import SessionSort from "./SessionSort";
+import SessionSearch from "./SessionSearch";
+import SessionFilter from "./SessionFilter";
 
-export default function FileSelectOption() {
+export default function SessionOption() {
   return (
     <Container>
       <SessionSearch />
       <SessionSort />
-      <SessionFilter />
+      <SessionFilter/>
     </Container>
   );
 }
 
 const Container = styled(Box)(() => ({
   display: "flex",
-
+  height: "120px",
   width: "100%",
   borderBottom: "2px solid #ddd",
   alignItems: "flex-end",

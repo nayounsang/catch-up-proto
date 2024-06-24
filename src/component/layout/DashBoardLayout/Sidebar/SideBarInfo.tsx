@@ -8,7 +8,8 @@ import {
 import { ReactNode } from "react";
 import SettingsIcon from "@mui/icons-material/Settings";
 import SideBarElement from "./SideBarElement";
-import BrandLogo from "../atom/BrandLogo";
+import BrandLogo from "../../../base/atom/BrandLogo";
+
 
 const infoData: {
   key: number;
