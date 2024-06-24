@@ -7,7 +7,7 @@ import {
   TableContainer,
   TableHead,
 } from "@mui/material";
-import SessionElement from "../base/molecule/SessionElement";
+import SessionElement from "./SessionElement";
 
 const sessionData: {
   name: string;
