@@ -8,7 +8,7 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import BrandLogo from "../component/atom/BrandLogo";
+import BrandLogo from "../../component/atom/BrandLogo";
 
 export default function Login() {
   return (

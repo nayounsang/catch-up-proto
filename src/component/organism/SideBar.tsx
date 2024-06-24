@@ -1,6 +1,6 @@
 import { Box, styled } from "@mui/material";
-import SideBarMenu from "../organism/SideBarMenu";
-import SideBarInfo from "../organism/SideBarInfo";
+import SideBarMenu from "../molecule/SideBarMenu";
+import SideBarInfo from "../molecule/SideBarInfo";
 export default function SideBar() {
   return (
     <Container>

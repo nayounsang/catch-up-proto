@@ -1,5 +1,5 @@
 import { Typography, styled } from "@mui/material";
-import Start from "../component/template/Start";
+import Start from "./component/Start";
 
 export default function Home() {
   return (
