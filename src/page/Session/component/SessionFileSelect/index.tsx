@@ -1,7 +1,7 @@
 import { Box, Button, FormLabel } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import FileSelectOption from "../../../component/organism/FileSelectOption";
-import FileTable from "../../../component/organism/FileTable";
+import FileSelectOption from "./FileSelectOption";
+import FileUploadTable from "../../../../component/base/organism/FileUploadTable";
 
 export default function SessionFileSelect() {
   return (
@@ -13,7 +13,7 @@ export default function SessionFileSelect() {
         </Button>
       </Box>
       <FileSelectOption />
-      <FileTable/>
+      <FileUploadTable/>
     </Box>
   );
 }

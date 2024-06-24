@@ -9,7 +9,7 @@ interface PropType {
   
 }
 
-export default function FileElement({
+export default function FileUploadElement({
   name,
   
   date,
