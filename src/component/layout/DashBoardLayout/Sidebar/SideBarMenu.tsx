@@ -1,4 +1,7 @@
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Box,
   List,
   ListItem,
@@ -9,8 +12,11 @@ import { ReactNode } from "react";
 import SchoolIcon from "@mui/icons-material/School";
 import ArticleIcon from "@mui/icons-material/Article";
 import DashboardIcon from "@mui/icons-material/Dashboard";
+import FolderIcon from "@mui/icons-material/Folder";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SideBarElement from "./SideBarElement";
 import BrandLogo from "@/component/base/atom/BrandLogo";
+import SideBarActionElement from "./SideBarActionElement";
 
 const menuData: {
   key: number;
@@ -21,12 +27,23 @@ const menuData: {
 }[] = [
   { key: 0, text: "대쉬보드", Icon: <DashboardIcon />, href: "/dashboard" },
   { key: 1, text: "세션", Icon: <SchoolIcon />, href: "/dashboard/sessions" },
-  { key: 2, text: "문서", Icon: <ArticleIcon />, href: "/dashboard/documents" },
+  { key: 2, text: "드라이브", Icon: <FolderIcon />, href: "/" },
+  { key: 3, text: "문서", Icon: <ArticleIcon />, href: "/dashboard/documents" },
+];
+
+const actionData: {
+  key: number;
+  text: string;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+}[] = [
+  { key: 0, text: "새션 접속" },
+  { key: 1, text: "새션 생성" },
+  { key: 2, text: "문서 업로드" },
 ];
 
 export default function SideBarMenu() {
   return (
-    <Box>
+    <Box sx={{ overflowY: "scroll" }}>
       <List>
         <ListItem>
           <ListItemIcon>
@@ -34,6 +51,33 @@ export default function SideBarMenu() {
           </ListItemIcon>
         </ListItem>
       </List>
+      <Accordion defaultExpanded>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          sx={{
+            "& .MuiAccordionSummary-content": {
+              margin: 0,
+              "&.Mui-expanded":{
+                margin: 0,
+              }
+            },
+            margin: 0,
+            "& .Mui-expanded": {
+              margin: 0,
+              minHeight: 0,
+            },
+          }}
+        >
+          <ListSubheader>편의 기능</ListSubheader>
+        </AccordionSummary>
+        <AccordionDetails>
+          <List>
+            {actionData.map((e) => (
+              <SideBarActionElement key={e.key} text={e.text} />
+            ))}
+          </List>{" "}
+        </AccordionDetails>
+      </Accordion>
       <List subheader={<ListSubheader>메뉴</ListSubheader>}>
         {menuData.map((e) => (
           <SideBarElement {...e} />
