@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   FormControlLabel,
   FormLabel,
   Radio,
@@ -32,8 +31,7 @@ export default function SessionDetailOption() {
         </RadioGroup>
       </Box>
       <Box flex="1" alignItems="center" display="flex" gap="0.5rem" justifyContent="flex-end">
-        <TextField label="초대 코드" size="small" value="1904a"/>
-        <Button variant="contained">생성</Button>
+        <TextField label="초대 코드" size="small" value="1904a" disabled/>
       </Box>
     </Box>
   );
