@@ -15,5 +15,4 @@ export default App;
 const Main = styled('main')(()=>({
   width: "100vw",
   height: "100vh",
-  overflowY: "scroll",
 }))
