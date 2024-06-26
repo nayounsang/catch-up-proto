@@ -6,6 +6,7 @@ import Session from "../page/Session";
 import DashBoardLayout from "../component/layout/DashBoardLayout";
 import DashboardSessions from "../page/DashBoard/page/Sessions";
 import DashBoardDocuments from "../page/DashBoard/page/Documents";
+import DashBoardChildrenLayout from "@/component/layout/\bDashBoardLayout/DashBoardChildrenLayout";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -14,9 +15,16 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <DashBoardLayout />,
     children: [
-      { path: "", element: <DashBoard /> },
-      { path: "/dashboard/sessions", element: <DashboardSessions/> },
-      { path: "/dashboard/documents", element: <DashBoardDocuments /> },
+      { index: true, element: <DashBoard /> },
+      {
+        path: "",
+        element: <DashBoardChildrenLayout />,
+        children: [
+          { path: "/dashboard/sessions", element: <DashboardSessions /> },
+          { path: "/dashboard/documents", element: <DashBoardDocuments /> },
+          { path: "/dashboard/drive", element: <Home /> },
+        ],
+      },
     ],
   },
   { path: "/upload", element: <Home /> },
