@@ -18,7 +18,9 @@ export default function SessionElement({
   auth,
 }: PropType) {
   return (
-    <TableRow>
+    <TableRow sx={{'&:hover':{
+      backgroundColor: "#eee",
+    }}}>
       <TableCell component="th" scope="row">
         <Link href="/session">{name}</Link>
       </TableCell>
