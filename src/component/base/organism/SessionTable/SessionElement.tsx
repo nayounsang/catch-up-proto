@@ -1,6 +1,4 @@
-import { Button, Link, TableCell, TableRow } from "@mui/material";
-
-import DeleteIcon from '@mui/icons-material/Delete';
+import { Checkbox, TableCell, TableRow } from "@mui/material";
 
 interface PropType {
   name: string;
@@ -18,20 +16,24 @@ export default function SessionElement({
   auth,
 }: PropType) {
   return (
-    <TableRow>
-      <TableCell component="th" scope="row">
-        <Link href="/session">{name}</Link>
+    <TableRow
+      sx={{
+        "&:hover": {
+          backgroundColor: "#f5f5f5",
+        },
+        cursor: "pointer",
+      }}
+     component="a" 
+     href="/session"
+    >
+      <TableCell component="th" scope="row" padding="checkbox">
+        <Checkbox />
       </TableCell>
+      <TableCell>{name}</TableCell>
       <TableCell align="right">{role}</TableCell>
       <TableCell align="right">{date}</TableCell>
       <TableCell align="right">{auth}</TableCell>
       <TableCell align="right">{document}</TableCell>
-
-      <TableCell align="center">
-        <Button>
-          <DeleteIcon color="error"/>
-        </Button>
-      </TableCell>
     </TableRow>
   );
 }
