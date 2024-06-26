@@ -3,9 +3,8 @@ import {
   Checkbox,
   TableCell,
   TableRow,
-  Typography,
 } from "@mui/material";
-import AddIcon from '@mui/icons-material/Add';
+import AddIcon from "@mui/icons-material/Add";
 
 interface PropType {
   name: string;
@@ -32,8 +31,8 @@ export default function DriveElement({ name, date, capacity }: PropType) {
       <TableCell align="right">{date}</TableCell>
       <TableCell align="right">{capacity}</TableCell>
       <TableCell align="center">
-        <Button variant="outlined" startIcon={<AddIcon/>}>
-          <Typography>세션 생성</Typography>
+        <Button variant="outlined" startIcon={<AddIcon />} size="small">
+          세션 생성
         </Button>
       </TableCell>
     </TableRow>

@@ -12,18 +12,17 @@ interface ElementPropType {
     | "info"
     | "warning"
     | undefined;
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  onClick?: React.MouseEventHandler<HTMLLIElement>;
   text: string;
 }
 
 function Element({ onClick, text, color }: ElementPropType) {
   return (
     <ListItem
-      onClick={() => {
-        onClick;
-      }}
+      onClick={onClick}
+      sx={{width:"200px",textAlign:"center"}}
     >
-      <Button color={color}>{text}</Button>
+      <Button color={color} fullWidth>{text}</Button>
     </ListItem>
   );
 }
@@ -44,7 +43,7 @@ export default function UserModalContent() {
 
   return (
     <Container>
-      <List>
+      <List component="div">
         {data.map((e, i) => (
           <Element
             onClick={() => {
