@@ -1,3 +1,4 @@
+import BrandLogo from "@/component/base/atom/BrandLogo";
 import {
   Box,
   Divider,
@@ -8,7 +9,6 @@ import {
   ListItemText,
   ListSubheader,
 } from "@mui/material";
-import BrandLogo from "../../../base/atom/BrandLogo";
 
 export default function SideBarInfo() {
   return (
@@ -16,9 +16,7 @@ export default function SideBarInfo() {
       <Divider />
       <List subheader={<ListSubheader>유저</ListSubheader>}>
         <ListItem>
-          <ListItemButton
-            sx={{ cursor: "default", ":hover": { backgroundColor: "inherit" } }}
-          >
+          <ListItemButton sx={{}}>
             <ListItemAvatar>
               <BrandLogo width={24} height={24} />
             </ListItemAvatar>

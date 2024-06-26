@@ -27,7 +27,7 @@ const menuData: {
 }[] = [
   { key: 0, text: "대쉬보드", Icon: <DashboardIcon />, href: "/dashboard" },
   { key: 1, text: "세션", Icon: <SchoolIcon />, href: "/dashboard/sessions" },
-  { key: 2, text: "드라이브", Icon: <FolderIcon />, href: "/" },
+  { key: 2, text: "드라이브", Icon: <FolderIcon />, href: "/dashboard/drive" },
   { key: 3, text: "문서", Icon: <ArticleIcon />, href: "/dashboard/documents" },
 ];
 
@@ -75,7 +75,7 @@ export default function SideBarMenu() {
             {actionData.map((e) => (
               <SideBarActionElement key={e.key} text={e.text} />
             ))}
-          </List>{" "}
+          </List>
         </AccordionDetails>
       </Accordion>
       <List subheader={<ListSubheader>메뉴</ListSubheader>}>

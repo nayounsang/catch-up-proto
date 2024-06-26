@@ -6,7 +6,7 @@ export default function DashBoardLayout() {
   return (
     <Container>
       <SideBar />
-      <Box sx={{ flexGrow: 1,overflowY:"scroll" }}>
+      <Box sx={{ flexGrow: 1, overflowY: "scroll" }}>
         <Outlet />
       </Box>
     </Container>
