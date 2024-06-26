@@ -78,7 +78,7 @@ export default function SideBarMenu() {
           </List>
         </AccordionDetails>
       </Accordion>
-      <List subheader={<ListSubheader>메뉴</ListSubheader>}>
+      <List subheader={<ListSubheader>메뉴</ListSubheader>} component="nav">
         {menuData.map((e) => (
           <SideBarElement {...e} />
         ))}
