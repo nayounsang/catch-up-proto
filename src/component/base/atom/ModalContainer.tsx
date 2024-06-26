@@ -24,7 +24,7 @@ export default function ModalContainer({
 }: PropType) {
   return (
     <ModalContext.Provider value={{ isOpen, setIsOpen }}>
-      <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+      <Modal open={isOpen} onClose={() => {setIsOpen(false)}}>
         <Container>{children}</Container>
       </Modal>
     </ModalContext.Provider>

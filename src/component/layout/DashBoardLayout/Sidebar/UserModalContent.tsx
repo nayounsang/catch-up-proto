@@ -12,23 +12,32 @@ interface ElementPropType {
     | "info"
     | "warning"
     | undefined;
-  onClick: React.MouseEventHandler<HTMLAnchorElement>;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
   text: string;
 }
 
 function Element({ onClick, text, color }: ElementPropType) {
   return (
-    <ListItem>
-      <Box>
-        <Button onClick={onClick} color={color}>
-          {text}
-        </Button>
-      </Box>
+    <ListItem
+      onClick={() => {
+        onClick;
+      }}
+    >
+      <Button color={color}>{text}</Button>
     </ListItem>
   );
 }
 
-const data: ElementPropType[] = [{}];
+const data: Omit<ElementPropType, "onClick">[] = [
+  {
+    color: "info",
+    text: "내 정보",
+  },
+  {
+    color: "error",
+    text: "로그아웃",
+  },
+];
 
 export default function UserModalContent() {
   const { isOpen, setIsOpen } = useContext(ModalContext);
@@ -36,7 +45,16 @@ export default function UserModalContent() {
   return (
     <Container>
       <List>
-        <ListItem></ListItem>
+        {data.map((e, i) => (
+          <Element
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
+            text={e.text}
+            color={e.color}
+            key={i}
+          />
+        ))}
       </List>
     </Container>
   );

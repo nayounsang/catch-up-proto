@@ -1,5 +1,5 @@
-import FileTable from "@/component/base/organism/FileTable";
+import DriveTable from "@/component/base/organism/DriveTable";
 
 export default function Drive() {
-  return <FileTable />;
+  return <DriveTable />;
 }

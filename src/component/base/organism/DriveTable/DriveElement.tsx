@@ -1,4 +1,11 @@
-import { Checkbox, TableCell, TableRow } from "@mui/material";
+import {
+  Button,
+  Checkbox,
+  TableCell,
+  TableRow,
+  Typography,
+} from "@mui/material";
+import AddIcon from '@mui/icons-material/Add';
 
 interface PropType {
   name: string;
@@ -6,7 +13,7 @@ interface PropType {
   capacity: string;
 }
 
-export default function FileElement({ name, date, capacity }: PropType) {
+export default function DriveElement({ name, date, capacity }: PropType) {
   return (
     <TableRow
       sx={{
@@ -24,6 +31,11 @@ export default function FileElement({ name, date, capacity }: PropType) {
       <TableCell>{name}</TableCell>
       <TableCell align="right">{date}</TableCell>
       <TableCell align="right">{capacity}</TableCell>
+      <TableCell align="center">
+        <Button variant="outlined" startIcon={<AddIcon/>}>
+          <Typography>세션 생성</Typography>
+        </Button>
+      </TableCell>
     </TableRow>
   );
 }
