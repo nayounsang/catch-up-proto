@@ -35,9 +35,10 @@ const actionData: {
   key: number;
   text: string;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
+  href?: string;
 }[] = [
   { key: 0, text: "새션 접속" },
-  { key: 1, text: "새션 생성" },
+  { key: 1, text: "새션 생성", href: "/session" },
   { key: 2, text: "문서 업로드" },
 ];
 
@@ -57,9 +58,9 @@ export default function SideBarMenu() {
           sx={{
             "& .MuiAccordionSummary-content": {
               margin: 0,
-              "&.Mui-expanded":{
+              "&.Mui-expanded": {
                 margin: 0,
-              }
+              },
             },
             margin: 0,
             "& .Mui-expanded": {
@@ -73,7 +74,7 @@ export default function SideBarMenu() {
         <AccordionDetails>
           <List>
             {actionData.map((e) => (
-              <SideBarActionElement key={e.key} text={e.text} />
+              <SideBarActionElement {...e} />
             ))}
           </List>
         </AccordionDetails>
