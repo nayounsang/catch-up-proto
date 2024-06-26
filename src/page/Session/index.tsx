@@ -12,7 +12,7 @@ export default function Session() {
           <SessionDetailOption />
           <SessionFileSelect />
         </FormControl>
-        <Button variant="contained" type="submit" size="large">
+        <Button variant="contained" type="submit" size="large" href="/view">
           <Typography>세션 시작</Typography>
         </Button>
       </InnerContainer>
