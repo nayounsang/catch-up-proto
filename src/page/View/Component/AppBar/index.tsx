@@ -13,7 +13,7 @@ interface PropType {
 
 export default function AppBar({ isOpen, setIsOpen }: PropType) {
   return (
-    <_AppBar position="static">
+    <_AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
       <Toolbar
         sx={{
           display: "flex",
@@ -23,7 +23,7 @@ export default function AppBar({ isOpen, setIsOpen }: PropType) {
       >
         <AppBarLeft isOpen={isOpen} setIsOpen={setIsOpen}/>
         <AppBarMid/>
-        <AppBarRight/>
+        <AppBarRight isOpen={isOpen} setIsOpen={setIsOpen}/>
       </Toolbar>
     </_AppBar>
   );

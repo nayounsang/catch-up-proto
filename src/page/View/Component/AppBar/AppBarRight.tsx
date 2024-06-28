@@ -1,10 +1,15 @@
 import { Brush, Download, Handyman } from "@mui/icons-material";
-import { Box, IconButton } from "@mui/material";
+import { Box, FormControlLabel, IconButton, Switch } from "@mui/material";
 import { useState } from "react";
 import SessionTool from "./SessionTool";
 import SessionDownload from "./SessionDownload";
 
-export default function AppBarRight() {
+interface PropType {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function AppBarRight({ isOpen, setIsOpen }: PropType) {
   const [toolAnchorEl, setToolAnchorEl] = useState<HTMLButtonElement | null>(
     null
   );
@@ -32,6 +37,10 @@ export default function AppBarRight() {
     setDownloadAnchorEl(null);
   };
 
+  const handleSwitchChange = () => {
+    setIsOpen(!isOpen);
+  }
+
   const toolOpen = Boolean(toolAnchorEl);
   const toolId = toolOpen ? "simple-popover" : undefined;
   const downloadOpen = Boolean(downloadAnchorEl);
@@ -44,9 +53,22 @@ export default function AppBarRight() {
       <IconButton color="inherit" onClick={handleDownloadPopoverOpen}>
         <Download />
       </IconButton>
-      <IconButton color="inherit">
-        <Brush />
-      </IconButton>
+      <FormControlLabel
+        control={
+          <Switch
+            color="default"
+            checked={isOpen}
+            onChange={handleSwitchChange}
+          />
+        }
+        labelPlacement="start"
+        label={
+          <IconButton color="inherit" onClick={handleSwitchChange}>
+            <Brush />
+          </IconButton>
+        }
+      />
+
       <SessionTool
         id={toolId}
         open={toolOpen}
