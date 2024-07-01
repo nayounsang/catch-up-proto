@@ -25,16 +25,21 @@ export default function ModalContainer({
   return (
     <ModalContext.Provider value={{ isOpen, setIsOpen }}>
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-        <Container onClick={()=>setIsOpen(false)}>{children}</Container>
+        <Container>{children}</Container>
       </Modal>
     </ModalContext.Provider>
   );
 }
 
 const Container = styled(Box)(() => ({
-  width: "100%",
-  height: "100%",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "auto",
 }));
+// width: "100%",
+// height: "100%",
+// display: "flex",
+// justifyContent: "center",
+// alignItems: "center",
