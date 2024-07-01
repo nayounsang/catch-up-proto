@@ -4,12 +4,12 @@ import { Outlet } from "react-router-dom";
 
 export default function DashBoardLayout() {
   return (
-    <Container>
-      <SideBar />
-      <Box sx={{ flexGrow: 1, overflowY: "scroll" }}>
-        <Outlet />
-      </Box>
-    </Container>
+      <Container>
+        <SideBar />
+        <Box sx={{ flexGrow: 1, overflowY: "scroll" }}>
+          <Outlet />
+        </Box>
+      </Container>
   );
 }
 

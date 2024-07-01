@@ -9,14 +9,14 @@ import { ReactNode } from "react";
 import { Link as _Link, To } from "react-router-dom";
 
 interface PropType {
-  Icon: ReactNode;
+  icon: ReactNode;
   text: string;
   href?: string;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 export default function SideBarElement({
-  Icon,
+  icon,
   text,
   onClick,
   href,
@@ -26,7 +26,7 @@ export default function SideBarElement({
     <ListItem>
       <Link to={href as To} preventScrollReset>
         <ListItemButton onClick={onClick}>
-          <ListItemIcon>{Icon}</ListItemIcon>
+          <ListItemIcon>{icon}</ListItemIcon>
           <ListItemText>{text}</ListItemText>
         </ListItemButton>
       </Link>

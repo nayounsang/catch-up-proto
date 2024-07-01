@@ -9,17 +9,36 @@ import {
   ListItemButton,
   ListItemText,
   ListSubheader,
+  Stack,
+  Switch,
+  Typography,
 } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import UserModalContent from "./UserModalContent";
-
+import { TutorContext } from "@/App";
 export default function SideBarInfo() {
   const [isOpen, setIsOpen] = useState(false);
+  const { isTutor, setIsTutor } = useContext(TutorContext);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsTutor(e.target.checked);
+  };
   return (
     <>
       <Box>
         <Divider />
         <List subheader={<ListSubheader>유저</ListSubheader>}>
+          <ListItem>
+            <Stack
+              direction="row"
+              spacing={1}
+              alignItems="center"
+              justifyContent="space-evenly"
+            >
+              <Typography>수강자</Typography>
+              <Switch onChange={handleChange} checked={isTutor}/>
+              <Typography>강의자</Typography>
+            </Stack>
+          </ListItem>
           <ListItem>
             <ListItemButton
               sx={{}}

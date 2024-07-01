@@ -10,7 +10,7 @@ export default function MainView() {
       flexDirection="column"
     >
       <Toolbar />
-      <Box flexGrow="1" boxSizing="border-box">
+      <Box flexGrow="1" boxSizing="border-box" position="relative">
         <Image src="/presentation.png" alt="presentation" />
       </Box>
     </Box>
