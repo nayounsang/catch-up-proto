@@ -4,24 +4,18 @@ import {
   FormLabel,
   Radio,
   RadioGroup,
-  TextField,
 } from "@mui/material";
 
 export default function SessionDetailOption() {
   return (
     <Box display="flex">
       <Box flex="1">
-        <FormLabel id="range">공개 범위</FormLabel>
+        <FormLabel id="range">파일 공개 범위</FormLabel>
         <RadioGroup defaultValue="link" row aria-labelledby="range">
-          <FormControlLabel
-            value="link"
-            control={<Radio />}
-            label="링크 소유자"
-          />
           <FormControlLabel
             value="public"
             control={<Radio />}
-            label="전체 공개"
+            label="세션 참여자"
           />
           <FormControlLabel
             value="private"
@@ -29,9 +23,6 @@ export default function SessionDetailOption() {
             label="비공개"
           />
         </RadioGroup>
-      </Box>
-      <Box flex="1" alignItems="center" display="flex" gap="0.5rem" justifyContent="flex-end">
-        <TextField label="초대 코드" size="small" value="1904a" disabled/>
       </Box>
     </Box>
   );

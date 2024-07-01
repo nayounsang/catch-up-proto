@@ -1,19 +1,37 @@
-import { Box, Button, FormLabel } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import FileSelectOption from "./FileSelectOption";
-import FileUploadTable from "../../../../component/base/organism/FileUploadTable";
+import { Box, Button, FormLabel, Typography } from "@mui/material";
+import { AttachFile } from "@mui/icons-material";
+import { useState } from "react";
+import ModalContainer from "@/component/base/atom/ModalContainer";
+import FileSelectModal from "./\bFileSelectModal";
 
 export default function SessionFileSelect() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <Box>
-      <Box display="flex" justifyContent="space-between" alignItems="center">
-        <FormLabel>강의 자료 선택</FormLabel>
-        <Button startIcon={<AddIcon />} variant="outlined">
-          내 장치에서 추가
-        </Button>
+    <>
+      <Box display="flex" flexDirection="column" gap="1rem">
+        <Box display="flex" flexDirection="column" gap="0.25rem">
+          <FormLabel>강의 자료 선택</FormLabel>
+          <Button
+            variant="contained"
+            color="secondary"
+            startIcon={<AttachFile />}
+            size="large"
+            sx={{ width: "200px" }}
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
+          >
+            강의 자료 추가
+          </Button>
+        </Box>
+        <Box display="flex" flexDirection="column" gap="0.25rem">
+          <FormLabel>현재 선택한 자료</FormLabel>
+          <Typography>Lecture-07-22.pdf</Typography>
+        </Box>
       </Box>
-      <FileSelectOption />
-      <FileUploadTable/>
-    </Box>
+      <ModalContainer isOpen={isOpen} setIsOpen={setIsOpen}>
+        <FileSelectModal />
+      </ModalContainer>
+    </>
   );
 }
