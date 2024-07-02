@@ -1,18 +1,19 @@
-import {
-  Button,
-  Checkbox,
-  TableCell,
-  TableRow,
-} from "@mui/material";
+import { Button, Checkbox, TableCell, TableRow } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
 interface PropType {
   name: string;
   date: string;
   capacity: string;
+  isTutor: boolean;
 }
 
-export default function DriveElement({ name, date, capacity }: PropType) {
+export default function DriveElement({
+  name,
+  date,
+  capacity,
+  isTutor,
+}: PropType) {
   return (
     <TableRow
       sx={{
@@ -30,11 +31,15 @@ export default function DriveElement({ name, date, capacity }: PropType) {
       <TableCell>{name}</TableCell>
       <TableCell align="right">{date}</TableCell>
       <TableCell align="right">{capacity}</TableCell>
-      <TableCell align="center">
-        <Button variant="outlined" startIcon={<AddIcon />} size="small">
-          세션 생성
-        </Button>
-      </TableCell>
+      {isTutor ? (
+        <TableCell align="center">
+          <Button variant="outlined" startIcon={<AddIcon />} size="small">
+            세션 생성
+          </Button>
+        </TableCell>
+      ) : (
+        <></>
+      )}
     </TableRow>
   );
 }
