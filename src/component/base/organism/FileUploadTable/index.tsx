@@ -13,12 +13,12 @@ export default function FileUploadTable() {
   return (
     <Box sx={{maxHeight:"250px",overflowY:"scroll"}}>
       <TableContainer component={Paper}>
-        <Table size="small">
+        <Table >
           <TableHead>
-            <TableCell>선택</TableCell>
             <TableCell align="left">파일명</TableCell>
             <TableCell align="right">일시</TableCell>
-            <TableCell align="center">삭제</TableCell>
+            <TableCell align="right">선택</TableCell>            
+            <TableCell align="right">미리보기</TableCell>
           </TableHead>
           <TableBody >
             {fileData.map((e, i) => (
