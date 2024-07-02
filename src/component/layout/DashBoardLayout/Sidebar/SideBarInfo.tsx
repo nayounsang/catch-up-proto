@@ -13,14 +13,32 @@ import {
   Switch,
   Typography,
 } from "@mui/material";
-import { useContext, useState } from "react";
+import { ReactNode, useContext, useState } from "react";
 import UserModalContent from "./UserModalContent";
 import { TutorContext } from "@/App";
+
+function SwitchLabel({
+  children,
+  onClick,
+}: {
+  children: ReactNode;
+  onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
+}) {
+  return (
+    <Box component="div" onClick={onClick} sx={{ cursor: "pointer" }}>
+      <Typography>{children}</Typography>
+    </Box>
+  );
+}
+
 export default function SideBarInfo() {
   const [isOpen, setIsOpen] = useState(false);
   const { isTutor, setIsTutor } = useContext(TutorContext);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsTutor(e.target.checked);
+  };
+  const handleLabelClick = () => {
+    setIsTutor(!isTutor);
   };
   return (
     <>
@@ -34,9 +52,9 @@ export default function SideBarInfo() {
               alignItems="center"
               justifyContent="space-evenly"
             >
-              <Typography>수강자</Typography>
-              <Switch onChange={handleChange} checked={isTutor}/>
-              <Typography>강의자</Typography>
+              <SwitchLabel onClick={handleLabelClick}>수강자</SwitchLabel>
+              <Switch onChange={handleChange} checked={isTutor} />
+              <SwitchLabel onClick={handleLabelClick}>강의자</SwitchLabel>
             </Stack>
           </ListItem>
           <ListItem>
