@@ -39,8 +39,8 @@ export default function SideBarMenu() {
         </ListItem>
       </List>
       <List
-        subheader={<ListSubheader>편의 기능</ListSubheader>}
-        component="nav"
+        // subheader={<ListSubheader>편의 기능</ListSubheader>}
+        component="div"
       >
         {isTutor ? (
           <SideBarActionElement
@@ -49,7 +49,7 @@ export default function SideBarMenu() {
             icon={<Add />}
           />
         ) : (
-          <SideBarActionElement text="새션 접속" icon={<Launch />} />
+          <SideBarActionElement text="새션 접속" icon={<Launch />} href="/join-session"/>
         )}
       </List>
       <List subheader={<ListSubheader>메뉴</ListSubheader>} component="nav">
