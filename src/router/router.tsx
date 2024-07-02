@@ -9,6 +9,7 @@ import DashBoardChildrenLayout from "@/component/layout/\bDashBoardLayout/DashBo
 import Drive from "@/page/DashBoard/page/Drive";
 import DashBoardLayout from "@/component/layout/\bDashBoardLayout";
 import View from "@/page/View";
+import JoinSession from "@/page/JoinSession";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
   { path: "/upload", element: <Home /> },
   { path: "/session", element: <Session /> },
   { path: "/view", element: <View /> },
+  { path: "/join-session", element: <JoinSession /> },
 ]);
 
 export default router;

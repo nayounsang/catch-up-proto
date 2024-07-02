@@ -1,10 +1,4 @@
-import {
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  styled,
-} from "@mui/material";
+import { Button, ListItem, Typography, styled } from "@mui/material";
 import { ReactNode } from "react";
 import { To, Link as _Link } from "react-router-dom";
 
@@ -27,7 +21,7 @@ function LinkWrapper({
 }
 interface PropType {
   text: string;
-  onClick?: React.MouseEventHandler<HTMLDivElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   href?: string;
   icon?: ReactNode;
 }
@@ -41,10 +35,20 @@ export default function SideBarActionElement({
   return (
     <ListItem>
       <LinkWrapper href={href}>
-        <ListItemButton onClick={onClick}>
+        <Button
+          onClick={onClick}
+          startIcon={icon}
+          variant="contained"
+          fullWidth
+          type="button"
+        >
+          <Typography>{text}</Typography>{" "}
+        </Button>
+
+        {/* <ListItemButton onClick={onClick}>
           {icon && <ListItemIcon>{icon}</ListItemIcon>}
           <ListItemText>{text}</ListItemText>
-        </ListItemButton>
+        </ListItemButton> */}
       </LinkWrapper>
     </ListItem>
   );
@@ -53,4 +57,5 @@ export default function SideBarActionElement({
 const Link = styled(_Link)(() => ({
   color: "#000",
   textDecoration: "inherit",
+  width: "100%",
 }));
