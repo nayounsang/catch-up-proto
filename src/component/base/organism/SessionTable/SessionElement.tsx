@@ -2,7 +2,6 @@ import { Checkbox, TableCell, TableRow } from "@mui/material";
 
 interface PropType {
   name: string;
-  role: string;
   date: string;
   document: string;
   auth: string;
@@ -10,7 +9,6 @@ interface PropType {
 
 export default function SessionElement({
   name,
-  role,
   date,
   document,
   auth,
@@ -30,7 +28,6 @@ export default function SessionElement({
         <Checkbox />
       </TableCell>
       <TableCell>{name}</TableCell>
-      <TableCell align="right">{role}</TableCell>
       <TableCell align="right">{date}</TableCell>
       <TableCell align="right">{auth}</TableCell>
       <TableCell align="right">{document}</TableCell>
