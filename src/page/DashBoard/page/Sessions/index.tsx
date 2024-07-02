@@ -20,7 +20,6 @@ export default function DashboardSessions() {
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           {isTutor ? "내가 진행한 세션" : "내가 수강한 세션"}
         </Typography>
-
         <Button startIcon={isTutor ? <Add /> : <Launch />} variant="contained">
           {isTutor ? "세션 생성" : "세션 접속"}
         </Button>
@@ -28,7 +27,6 @@ export default function DashboardSessions() {
           선택 삭제
         </Button>
       </Box>
-
       <SessionTable isTutor={isTutor} />
     </>
   );
