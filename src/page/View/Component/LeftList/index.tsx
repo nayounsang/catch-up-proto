@@ -1,4 +1,4 @@
-import { Box, Drawer, List, Typography } from "@mui/material";
+import { Box, Drawer, List, Toolbar, Typography } from "@mui/material";
 
 interface PropType {
   isOpen: boolean;
@@ -21,6 +21,7 @@ export default function LeftList({ isOpen, setIsOpen }: PropType) {
         setIsOpen(false);
       }}
     >
+      <Toolbar/>
       <List
         sx={{
           display: "flex",

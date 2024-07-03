@@ -7,6 +7,7 @@ export default function Session() {
   return (
     <Container>
       <InnerContainer>
+        <Typography variant="h4">세션 설정</Typography>
         <FormControl sx={{ gap: "1rem" }}>
           <SessionTitleInput />
           <SessionDetailOption />
@@ -23,7 +24,7 @@ export default function Session() {
 const Container = styled(Box)(() => ({
   display: "flex",
   justifyContent: "center",
-
+  alignItems:"center",
   width: "100%",
   height: "100%",
 }));
@@ -31,7 +32,7 @@ const Container = styled(Box)(() => ({
 const InnerContainer = styled(Box)(() => ({
   display: "flex",
   flexDirection: "column",
-  gap: "1rem",
+  gap: "1.5rem",
   boxSizing: "border-box",
   padding: "4rem",
   width: "100%",

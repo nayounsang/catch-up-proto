@@ -4,6 +4,7 @@ import AppBar from "./Component/AppBar";
 import LeftList from "./Component/LeftList";
 import RightList from "./Component/RightList";
 import MainView from "./Component/MainView";
+import MyDocument from "./Component/Document";
 
 export default function View() {
   const [isOpen, setIsOpen] = useState(true);
@@ -11,10 +12,11 @@ export default function View() {
   return (
     <>
       <Box display="flex" width="100%" height="100%">
-        <AppBar isOpen={isOpen} setIsOpen={setIsOpen} />
+        {/* <AppBar isOpen={isOpen} setIsOpen={setIsOpen} />
         <LeftList isOpen={isOpen} setIsOpen={setIsOpen} />
         <MainView />
-        <RightList isOpen={isOpen} setIsOpen={setIsOpen} />
+        <RightList isOpen={isOpen} setIsOpen={setIsOpen} /> */}
+        <MyDocument/>
       </Box>
     </>
   );
