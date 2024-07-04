@@ -3,11 +3,18 @@ import { Canvas, FabricObject, Object, PencilBrush, Point } from "fabric";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 interface PropType {
-  pageNumber?: number;
+  pageNumber: number;
   isExcalidrawVisible: boolean;
+  setPageElements: React.Dispatch<React.SetStateAction<string[]>>;
+  pageElements: string[];
 }
 
-export default function FabricPdf({ isExcalidrawVisible }: PropType) {
+export default function FabricPdf({
+  isExcalidrawVisible,
+  pageNumber,
+  pageElements,
+  setPageElements,
+}: PropType) {
   //const canvasContainerRef = useRef(null);
   const canvasRef = useRef(null);
   const [canvas, setCanvas] = useState<null | Canvas>(null);
@@ -15,8 +22,6 @@ export default function FabricPdf({ isExcalidrawVisible }: PropType) {
   const [lastDrawnObject, setLastDrawnObject] = useState<null | FabricObject>(
     null
   );
-  const [canvasData, setCanvasData] = useState<JSON[]>([]);
-  console.log(lastDrawnObject);
 
   useEffect(() => {
     if (canvasRef.current === null) {
@@ -101,21 +106,37 @@ export default function FabricPdf({ isExcalidrawVisible }: PropType) {
     }
   }, [activeTool, canvas, handleHandTool, handlePenTool, handleSelectTool]);
 
-  const saveCanvasData = () => {
+  const saveCanvasData = useCallback(() => {
     if (canvas) {
-      const data = canvas.toJSON();
-      setCanvasData(data);
-    }
-  };
-
-  const loadCanvasData = () => {
-    if (canvas && canvasData) {
-      canvas.loadFromJSON(canvasData, canvas.renderAll.bind(canvas), (o, object) => {
-        console.log('Object loaded:', object);
+      const data = canvas.toJSON() as JSON;
+      setPageElements((prev) => {
+        const updated = [...prev];
+        updated[pageNumber] = JSON.stringify(data);
+        return updated;
       });
+      
     }
-  };
+  }, [canvas, pageNumber, setPageElements]);
 
+  const loadCanvasData = useCallback(() => {
+    console.log(pageElements);
+    if (canvas && pageElements[pageNumber]) {
+      canvas.loadFromJSON(
+        pageElements[pageNumber],
+        canvas.renderAll.bind(canvas)
+      );
+    }
+  }, [canvas, pageElements, pageNumber]);
+
+  useEffect(()=>{
+    loadCanvasData();
+  },[pageNumber])
+
+
+  useEffect(() => {
+    const intervalId = setInterval(saveCanvasData, 1000);
+    return () => clearInterval(intervalId);
+  }, [saveCanvasData]);
 
   return (
     <>

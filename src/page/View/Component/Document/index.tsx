@@ -15,34 +15,20 @@ export default function MyDocument() {
   const [numPages, setNumPages] = useState<null | number>(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [isExcalidrawVisible, setIsExcalidrawVisible] = useState(false);
-  const [pageElements, setPageElements] = useState<ExcalidrawElement[][]>([]);
-  const [excalidrawAPI, setExcalidrawAPI] =
-    useState<null | ExcalidrawImperativeAPI>(null);
+  const [pageElements, setPageElements] = useState<string[]>([]);
   useEffect(() => {
     if (numPages) {
-      setPageElements(Array.from({ length: numPages }, () => []));
+      setPageElements(Array.from({ length: numPages }, () => ('')));
     }
   }, [numPages]);
   const updatePageElementsCallback = useCallback(() => {
-    setPageElements((prev) => {
-      const updated = [...prev];
-      if (excalidrawAPI) {
-        updated[pageNumber] =
-          excalidrawAPI.getSceneElements() as ExcalidrawElement[];
-      }
-      return updated;
-    });
-  }, [excalidrawAPI, pageNumber]);
+    setPageElements([]);
+  }, []);
   useEffect(() => {
     const intervalId = setInterval(updatePageElementsCallback, 5000);
     return () => clearInterval(intervalId);
   }, [updatePageElementsCallback]);
-  useEffect(() => {
-    // console.log(pageElements);
-    if (excalidrawAPI) {
-      excalidrawAPI?.updateScene({ elements: pageElements[pageNumber] });
-    }
-  }, [excalidrawAPI, pageElements, pageNumber, isExcalidrawVisible]);
+  useEffect(() => {}, [pageElements, pageNumber, isExcalidrawVisible]);
   const onDocumentLoaded = ({ numPages }: { numPages: number | null }) =>
     setNumPages(numPages);
   return (
@@ -50,7 +36,12 @@ export default function MyDocument() {
       {numPages !== null && (
         <>
           <Page pageNumber={pageNumber} />
-          <FabricPdf isExcalidrawVisible={isExcalidrawVisible}/>
+          <FabricPdf
+            isExcalidrawVisible={isExcalidrawVisible}
+            pageElements={pageElements}
+            setPageElements={setPageElements}
+            pageNumber={pageNumber}
+          />
           {/* <ExcaliPdf
             pageNumber={pageNumber}
             isExcalidrawVisible={isExcalidrawVisible}
